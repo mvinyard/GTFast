@@ -74,8 +74,13 @@ anngtf loading time: 12.46s
 
 To be implemented...
 ```python
-import anndata
+import anndata as a
+import anngtf
 
 adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
-anngtf.lift_genes(adata, gtf) 
+
+gtf = anngtf.load(genes=True)
+anngtf.add(adata, gtf)
 ```
+
+Since the `anngtf` distribution already knows where the `.csv / .gtf` files are, we could directly annotate `adata` without first specifcying `gtf` as a DataFrame, saving a step but I think it's more user-friendly to see what each one looks like, first. 
