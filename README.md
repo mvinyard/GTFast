@@ -20,8 +20,9 @@ git clone https://github.com/mvinyard/anngtf.git
 cd anngtf; pip install -e .
 ```
 
-### Example usage
+## Example usage
 
+### Parsing a `.gtf` file
 ```python
 import anngtf
 
@@ -39,6 +40,20 @@ In the scenario in which you've already run the above function, run:
 ```python
 gtf = anngtf.load() # no path necessary! 
 ```
+
+### Updating the `adata.var` table. 
+```python
+import anndata as a
+import anngtf
+
+adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
+gtf = anngtf.load(genes=True)
+
+anngtf.add(adata, gtf)
+```
+
+Since the `anngtf` distribution already knows where the `.csv / .gtf` files are, we could directly annotate `adata` without first specifcying `gtf` as a DataFrame, saving a step but I think it's more user-friendly to see what each one looks like, first. 
+
 
 ### Working advantage
 
@@ -69,18 +84,3 @@ anngtf loading time: 12.46s
 ~ 7x speed improvement. 
 
 * **Note**: This is not meant to criticize or comment on anything related to [`gtfparse`](https://github.com/openvax/gtfparse) - in fact, this library relies solely on `gtfparse` for the actual parsing of a `.gtf` file into memory as `pandas.DataFrame`.
-
----
-
-To be implemented...
-```python
-import anndata as a
-import anngtf
-
-adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
-
-gtf = anngtf.load(genes=True)
-anngtf.add(adata, gtf)
-```
-
-Since the `anngtf` distribution already knows where the `.csv / .gtf` files are, we could directly annotate `adata` without first specifcying `gtf` as a DataFrame, saving a step but I think it's more user-friendly to see what each one looks like, first. 
