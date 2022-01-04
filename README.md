@@ -45,5 +45,5 @@ To be implemented...
 import anndata
 
 adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
-ag.lift_genes(adata, gtf) 
+anngtf.lift_genes(adata, gtf) 
 ```
