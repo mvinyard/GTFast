@@ -8,7 +8,7 @@ Lift annotations from a **[`gtf`](https://en.wikipedia.org/wiki/Gene_transfer_fo
 
 ### Installation
 
-To install via pip:
+To install via [pip](https://pypi.org/project/anngtf):
 ```BASH
 pip install anngtf
 ```
