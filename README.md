@@ -23,7 +23,6 @@ cd anngtf; pip install -e .
 ### Example usage
 
 ```python
-import anndata
 import anngtf
 
 gtf_filepath = "/path/to/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf"
@@ -43,6 +42,8 @@ gtf = anngtf.load() # no path necessary!
 
 To be implemented...
 ```
+import anndata
+
 adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
 ag.lift_genes(adata, gtf) 
 ```
