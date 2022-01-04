@@ -40,6 +40,38 @@ In the scenario in which you've already run the above function, run:
 gtf = anngtf.load() # no path necessary! 
 ```
 
+### Working advantage
+
+Let's take a look at the time difference of loading a `.gtf` into memory as a `pandas.DataFrame`: 
+
+```python
+import anngtf
+import gtfparse
+import time
+
+start = time.time()
+gtf = gtfparse.read_gtf("/home/mvinyard/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf")
+stop = time.time()
+
+print("baseline loading time: {:.2f}s".format(stop - start), end='\n\n')
+
+start = time.time()
+gtf = anngtf.load()
+stop = time.time()
+
+print("anngtf loading time: {:.2f}s".format(stop - start))
+```
+```
+baseline loading time: 87.54s
+
+anngtf loading time: 12.46s
+```
+~ 7x speed improvement. 
+
+* **Note**: This is not meant to criticize or comment on anything related to [`gtfparse`](https://github.com/openvax/gtfparse) - in fact, this library relies solely on `gtfparse` for the actual parsing of a `.gtf` file into memory as `pandas.DataFrame`.
+
+---
+
 To be implemented...
 ```python
 import anndata
