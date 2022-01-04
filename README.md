@@ -41,7 +41,7 @@ gtf = anngtf.load() # no path necessary!
 ```
 
 To be implemented...
-```
+```python
 import anndata
 
 adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
