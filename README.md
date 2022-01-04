@@ -26,8 +26,23 @@ cd anngtf; pip install -e .
 import anndata
 import anngtf
 
-gtf = "/path/to/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf"
+gtf_filepath = "/path/to/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf"
 
+```
+
+If this is your first time using `anngtf`, run:
+```python
+gtf = anngtf.parse(path=gtf_filepath, genes=False, force=False, return_gtf=True)
+```
+Running this function will create two `.csv` files from the given `.gtf` files - one containing all feature types and one containing only genes. Both of these files are smaller than a `.gtf` and can be loaded into memory much faster using `pandas.read_csv()` (shortcut implemented in the next function). Additionally, this function leaves a paper trail for `anngtf` to find the newly-created `.csv` files again in the future such that one does not need to pass a path to the gtf. 
+
+In the scenario in which you've already run the above function, run:
+```python
+gtf = anngtf.load() # no path necessary! 
+```
+
+To be implemented...
+```
 adata = anndata.read_h5ad("/path/to/singlecell/data/adata.h5ad")
-ag.lift_genes(adata, gtf)
+ag.lift_genes(adata, gtf) 
 ```

@@ -1,0 +1,3 @@
+/home/mvinyard/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/genes.gtf
+/home/mvinyard/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/csv/gtf.csv
+/home/mvinyard/ref/hg38/refdata-cellranger-arc-GRCh38-2020-A-2.0.0/genes/csv/gtf.genes.csv
