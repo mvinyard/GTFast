@@ -8,12 +8,12 @@ Lift annotations from a **[`gtf`](https://en.wikipedia.org/wiki/Gene_transfer_fo
 
 ### Installation
 
-Available via *The Python Package Index (PyPI)*:
+To install via pip:
 ```BASH
 pip install anngtf
 ```
 
-*To install the development version*: 
+To install the development version: 
 ```BASH
 git clone https://github.com/mvinyard/anngtf.git
 
