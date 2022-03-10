@@ -3,7 +3,7 @@ import warnings
 
 import gtfparse
 import pandas as pd
-import pyrequisites
+import pydk
 
 
 warnings.filterwarnings("ignore")
@@ -15,7 +15,7 @@ def _create_gtf_csv_dir(path):
 
     gtf_dir = os.path.dirname(path)
     csv_dir = os.path.join(gtf_dir, "csv")
-    pyrequisites.mkdir_flex(csv_dir)
+    pydk.mkdir_flex(csv_dir)
 
     return gtf_dir, csv_dir
 
