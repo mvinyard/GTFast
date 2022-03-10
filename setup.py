@@ -23,6 +23,7 @@ setup(
 	"anndata>=0.7.8",
 	"gtfparse>=1.2.1",
 	"pandas>=1.3.5",
+	"pydk>=0.0.4",
     ],
     classifiers=[
         "Development Status :: 2 - Pre-Alpha",
