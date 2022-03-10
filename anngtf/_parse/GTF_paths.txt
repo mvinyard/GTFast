@@ -1,3 +1,0 @@
-/home/mvinyard/ref/hg38/genes/genes.gtf
-/home/mvinyard/ref/hg38/genes/csv/gtf.csv
-/home/mvinyard/ref/hg38/genes/csv/gtf.genes.csv
