@@ -6,7 +6,7 @@ import sys
 
 setup(
     name="anngtf",
-    version="0.0.0",
+    version="0.0.1",
     python_requires=">3.6.0",
     author="Michael E. Vinyard - Harvard University - Massachussetts General Hospital - Broad Institute of MIT and Harvard",
     author_email="mvinyard@broadinstitute.org",
@@ -16,6 +16,7 @@ setup(
     description="anngtf - lift annotations from a `.gtf` file to your AnnData object.",
     packages=[
         "anngtf",
+	"anngtf._parse",
     ],
     
     install_requires=[
