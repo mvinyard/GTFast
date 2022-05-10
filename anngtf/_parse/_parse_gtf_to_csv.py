@@ -1,3 +1,9 @@
+
+__module_name__ = "_parse_gtf_to_csv.py"
+__author__ = ", ".join(["Michael E. Vinyard"])
+__email__ = ", ".join(["vinyard@g.harvard.edu",])
+
+
 import os
 import warnings
 
@@ -51,30 +57,13 @@ class _FractionatedGTF:
         self._gtf_dir, self._csv_dir = _create_gtf_csv_dir(path)
         self._gtf_csv_path = os.path.join(self._csv_dir, "gtf.csv")
         self._gene_gtf_csv_path = os.path.join(self._csv_dir, "gtf.genes.csv")
-        
-        self._gene_columns_to_keep = [
-            "seqname",
-            "source",
-            "feature",
-            "start",
-            "end",
-            "strand",
-            "frame",
-            "gene_id",
-            "gene_version",
-            "gene_type",
-            "gene_name",
-            "level",
-            "hgnc_id",
-            "tag",
-            "havana_gene",
-        ]
     
     def parse_gtf(self, write_csv=True):
         
         """"""
         
         self._gtf = gtfparse.read_gtf(self._gtf_path)
+        self._gene_columns_to_keep = self._gtf.columns
         
         if write_csv:
             self._gtf.to_csv(self._gtf_csv_path)

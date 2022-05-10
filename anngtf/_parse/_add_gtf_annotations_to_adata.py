@@ -1,4 +1,8 @@
 
+__module_name__ = "_add_gtf_annotations_to_adata.py"
+__author__ = ", ".join(["Michael E. Vinyard"])
+__email__ = ", ".join(["vinyard@g.harvard.edu",])
+
 
 def _add_gtf_annotations_to_adata(adata, gtf_df, index_col="index", gene_id="gene_ids", chr_name="seqname"):
 
