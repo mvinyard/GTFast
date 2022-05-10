@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # package-specific paths
-GTF_paths.txt
+/gtfast/.cached/GTF_paths.txt
