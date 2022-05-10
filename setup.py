@@ -6,7 +6,7 @@ import sys
 
 setup(
     name="anngtf",
-    version="0.0.11",
+    version="0.0.2",
     python_requires=">3.6.0",
     author="Michael E. Vinyard - Harvard University - Massachussetts General Hospital - Broad Institute of MIT and Harvard",
     author_email="mvinyard@broadinstitute.org",
