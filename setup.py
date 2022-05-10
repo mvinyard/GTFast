@@ -16,8 +16,6 @@ setup(
     description="GTFast - cache and subset a `.gtf` file as a `.csv` for faster subsequent use.",
     packages=[
         "gtfast",
-	"gtfast._parse",
-	"gtfast._read",
     ],
     
     install_requires=[
