@@ -5,22 +5,22 @@ import sys
 
 
 setup(
-    name="anngtf",
-    version="0.0.2",
+    name="GTFast",
+    version="0.0.1",
     python_requires=">3.6.0",
     author="Michael E. Vinyard - Harvard University - Massachussetts General Hospital - Broad Institute of MIT and Harvard",
     author_email="mvinyard@broadinstitute.org",
     url=None,
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
-    description="anngtf - lift annotations from a `.gtf` file to your AnnData object.",
+    description="GTFast - cache and subset a `.gtf` file as a `.csv` for faster subsequent use.",
     packages=[
-        "anngtf",
-	"anngtf._parse",
+        "gtfast",
+	"gtfast._parse",
+	"gtfast._read",
     ],
     
     install_requires=[
-	"anndata>=0.7.8",
 	"gtfparse>=1.2.1",
 	"pandas>=1.3.5",
 	"pydk>=0.0.4",
