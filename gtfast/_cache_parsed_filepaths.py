@@ -15,7 +15,7 @@ import os
 import pydk
 
 
-def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path, silent=False):
+def _cache_parsed_filepaths(gtf_path, silent=False):
 
     """
     Write a file, recording the .csv and .gtf files for later reading.
@@ -45,6 +45,11 @@ def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path, silent=Fa
     """
 
     msg = _Messages(silent)
+    
+    gtf_dir = os.path.dirname(gtf_path)
+    csv_dir = os.path.join(gtf_dir, "csv")
+    gtf_csv_path = os.path.join(csv_dir, "gtf.csv")
+    gene_gtf_csv_path = os.path.join(csv_dir, "gtf.genes.csv")
     
     to_write = [gtf_path, gtf_csv_path, gene_gtf_csv_path]
     

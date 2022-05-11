@@ -82,10 +82,7 @@ class _parsed_GTF:
             
     def remember(self):
         
-        _cache_parsed_filepaths(self._gtf_path,
-                                self._gtf_csv_path,
-                                self._gene_gtf_csv_path,
-                                self._silent)
+        _cache_parsed_filepaths(self._gtf_path, self._silent)
                   
             
 def _parse_GTF_to_csv(path, genes=False, force=False, silent=False):
