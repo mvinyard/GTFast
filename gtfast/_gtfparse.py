@@ -14,7 +14,8 @@ from ._Messages import _Messages
 import gtfparse
 
 
-def _gtfparse(gtf_path):
-
+def _gtfparse(gtf_path, silent=False):
+    
+    msg = _Messages(silent)
     msg.gtfparse(gtf_path)
     return gtfparse.read_gtf(gtf_path)

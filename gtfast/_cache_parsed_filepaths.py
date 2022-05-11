@@ -15,7 +15,7 @@ import os
 import pydk
 
 
-def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path):
+def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path, silent=False):
 
     """
     Write a file, recording the .csv and .gtf files for later reading.
@@ -30,7 +30,10 @@ def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path):
 
     gene_gtf_csv_path
         type: str
-
+    
+    silent
+        default: False
+        type: bool
 
     Returns:
     --------
@@ -41,14 +44,17 @@ def _cache_parsed_filepaths(gtf_path, gtf_csv_path, gene_gtf_csv_path):
 
     """
 
-    msg = _Messages()
+    msg = _Messages(silent)
     
-    GTF_path_cache = os.path.join(os.path.dirname(__file__), ".cached/GTF_paths.txt")
-    pydk.mkdir_flex(".cached")
-    msg.remember_paths(GTF_path_cache)
+    to_write = [gtf_path, gtf_csv_path, gene_gtf_csv_path]
     
-    with open(GTF_path_cache, "w") as f:
-        f.write(gtf_path + "\n")
-        f.write(gtf_csv_path + "\n")
-        f.write(gene_gtf_csv_path + "\n")
+    cache_dir = os.path.join(os.path.dirname(__file__), ".cached")
+    cached_GTF_path= os.path.join(cache_dir, "GTF_paths.txt")
+    
+    pydk.mkdir_flex(cache_dir)
+    msg.remember_paths(cached_GTF_path)
+    
+    with open(cached_GTF_path, "w") as f:
+        for path in to_write:
+            f.write(path + "\n")
         f.close()

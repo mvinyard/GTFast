@@ -9,7 +9,7 @@ __email__ = ", ".join(["vinyard@g.harvard.edu",])
 from ._Messages import _Messages
 
 
-def _filter_gtf_df(GTF_df, col, selection, keep_columns=False):
+def _filter_gtf_df(GTF_df, col, selection, keep_columns, silent=False):
 
     """
     Filter a GTF on a specific feature type (e.g., genes)
@@ -33,17 +33,17 @@ def _filter_gtf_df(GTF_df, col, selection, keep_columns=False):
         type: bool
         default: False
 
-
+    silent
+        default: False
+        type: bool
+    
     Returns:
     --------
     GTF_filtered
         type: pandas.DataFrame
     """
     
-    msg = _Messages()
+    msg = _Messages(silent)
     msg.filtering(col, selection)
-
-    if not keep_columns:
-        keep_columns = GTF_df.columns
 
     return GTF_df.loc[GTF_df[col] == selection][keep_columns]

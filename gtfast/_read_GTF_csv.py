@@ -44,11 +44,39 @@ def _read_gtf_from_csv(path):
     return pd.read_csv(path, index_col=0)
 
 
-def _read_GTF_csv(genes=False, gtf_path=False):
+def _read_GTF_csv(genes=False, gtf_path=False, silent=False):
+    
+    """
+    Load GTF (.csv) as a pandas DataFrame from cached path.
+    
+    Parameters:
+    -----------
+    genes
+        default: False
+        type: str or bool
+        
+    gtf_path
+        default: False
+        type: str or bool
+        
+    silent
+        default: False
+        type: bool
+    
+    Returns:
+    --------
+    GTF
+        type: pandas.DataFrame
+    
+    Notes:
+    ------
+    (1) This is the key function that is run once the user has done the initial GTF parsing.
+    
+    """
 
-    msg = _Messages()
+    msg = _Messages(silent)
 
-    GTF_csv_path = os.path.join(os.path.dirname(__file__), "GTF_paths.txt")
+    GTF_csv_path = os.path.join(os.path.dirname(__file__), ".cached/GTF_paths.txt")
 
     if os.path.exists(GTF_csv_path):
         msg.cache_found(GTF_csv_path)
@@ -62,6 +90,4 @@ def _read_GTF_csv(genes=False, gtf_path=False):
 
     else:
         assert gtf_path, msg.assert_GTF_path()
-        from ._parse_gtf_to_csv import _parse_gtf_to_csv
-
-        return _parse_gtf_to_csv(gtf_path, genes=genes, force=False, return_gtf=True)
+#         return _parse_GTF_to_csv(gtf_path, genes=genes, force=False, return_gtf=True)
