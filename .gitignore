@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# package-specific paths
+/gtfast/.cached/GTF_paths.txt
