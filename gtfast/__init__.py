@@ -7,3 +7,4 @@ __email__ = ", ".join(["vinyard@g.harvard.edu",])
 from ._parse_GTF_to_csv import _parse_GTF_to_csv as parse
 from ._read_GTF_csv import _read_GTF_csv as load
 from ._add_GTF_annotations_to_adata import _add_GTF_annotations_to_adata as add
+from ._cache_parsed_filepaths import _cache_parsed_filepaths as find
