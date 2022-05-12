@@ -1,4 +1,4 @@
-# ![GTFast-logo](/docs/img/GTFAST.logo.svg)
+# ![GTFast-logo](/docs/img/GTFast.logo.svg)
 
 [![PyPI pyversions](https://img.shields.io/pypi/pyversions/gtfast.svg)](https://pypi.python.org/pypi/gtfast/)
 [![PyPI version](https://badge.fury.io/py/gtfast.svg)](https://badge.fury.io/py/gtfast)
